@@ -1,0 +1,239 @@
+@mixin Montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$red-carnelian: rgba(196, 49, 33, 0.75);
+$lumina-orange: rgb(237, 81, 63);
+$blue-persian: #005e9e;
+$white: #ffffff;
+$gray-isabelline: #f2f0f0;
+$blue-alice: #eaf7fb;
+$black-raisin: #231f20;
+$gray-davy: #58595b;
+$gray-old-silver: #808285;
+$green: #05a660;
+$gray-light: #d1d3d4;
+$blue-bolt: #00c0f3;
+$button-primary: rgba(234, 97, 83, 0.75);
+$button-seconday: #f9f9f9;
+@mixin card-shadow {
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+@mixin vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin vertical-center-left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@mixin vertical-center-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+body {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $lumina-orange;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $lumina-orange;
+  }
+  * {
+    // font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lumina-orange;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lumina-orange;
+    }
+  }
+}
+* {
+  // color: rgb(45, 44, 44);
+  box-sizing: border-box;
+}
+.lumina-providor {
+  font-size: 14px;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $lumina-orange;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $lumina-orange;
+  }
+  * {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lumina-orange;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lumina-orange;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lumina-header-wrapper {
+    padding: 5px 10px;
+    height: 40px;
+    position: relative;
+    box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04),
+      0px 4px 8px rgba(96, 97, 112, 0.1);
+  }
+  .lumina-header-nav-cntnr {
+    height: 40px;
+    display: none;
+  }
+  .lumina-header-app-logo {
+    @include vertical-center-left;
+    img {
+      // height: auto;
+      max-height: 20px;
+      margin: 0 10px;
+    }
+    height: 40px;
+    width: 80%;
+    max-width: 80%;
+  }
+  .lumina-header-profile-wrapper {
+    height: 40px;
+    width: 20%;
+    max-width: 20%;
+  }
+  .lumina-header-app-logo-img {
+    height: 20px;
+  }
+
+  .lumina-header-hamburger-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 30px;
+    background-color: transparent;
+    height: 40px;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+    i {
+      color: $blue-persian;
+      transition: all 1s ease-in 0s;
+    }
+  }
+  .lumina-header-hamburger-menu {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04),
+      0px 4px 8px rgba(96, 97, 112, 0.1);
+    border: 1px solid $gray-light;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    * {
+      transform: scale(0.8);
+    }
+    z-index: 5;
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .lumina-bottom-navigation {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    height: 40px;
+    bottom: 0;
+    * {
+      transform: scale(0.85);
+    }
+  }
+  .lumina-nav-center-item {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+  }
+  .lumina-nav-item {
+    height: 45px;
+  }
+  .lumina-nav-item-icon {
+    margin: 2px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .lumina-header-hamburger-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,113 @@
+@import "../../styles/global"; // Ensure this path is correct
+.lumina-toasts-wrapper {
+  position: fixed;
+  top: 1px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5000;
+}
+.lumina-toast-icon {
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+.lumina-toast {
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.22);
+  margin-top: 16px;
+  display: flex;
+  font-size: 12px;
+  // * {
+  //   font-size: 12px;
+  // }
+
+  padding: 0 0 0 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 1s ease-in 1s;
+  max-width: 20vw;
+  width: fit-content;
+  @include vertical-center-left();
+  justify-content: space-between;
+  flex-grow: 1;
+  animation: toastFadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.lumina-toast svg {
+  width: 30px;
+  height: 30px;
+  path {
+    fill: #fff;
+  }
+}
+.lumina-toast-default {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+}
+.lumina-toast-success {
+  background-color: #3fc133;
+  border: 1px solid #ccc;
+  * {
+    color: #fff;
+  }
+}
+.lumina-toast-error {
+  background-color: #f7464c;
+  border: 1px solid #ccc;
+  * {
+    color: #fff;
+  }
+}
+.lumina-toast-info {
+  background-color: #72d6fa;
+  border: 1px solid #ccc;
+}
+
+.lumina-toast-warn {
+  background-color: #f1c411;
+  border: 1px solid #ccc;
+  * {
+    color: #fff;
+  }
+}
+
+.lumina-toast__text {
+  padding: 0.7rem 12px;
+  line-height: 1.4;
+  font-weight: 500;
+  @include Montserrat;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.lumina-toast__close-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+@keyframes toastFadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lumina-toast {
+    max-width: none;
+  }
+}
