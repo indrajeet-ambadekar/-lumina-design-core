@@ -11,7 +11,7 @@ const entries = componentNames.reduce((acc, component) => {
   acc[component] = `./src/components/${component}/index.js`;
   return acc;
 }, { index: './src/index.js' });
-console.log(entries)
+
 module.exports = {
   mode: 'production',
   entry: entries,
@@ -33,6 +33,8 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            // Ensure compatibility with older browsers if necessary
+            // plugins: ['@babel/plugin-transform-runtime']
           },
         },
       },

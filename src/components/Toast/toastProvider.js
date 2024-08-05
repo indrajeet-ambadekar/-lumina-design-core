@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { createPortal } from "react-dom";
 import "./Toast.scss";
 import { ToastContext } from "./toastContext";
@@ -14,8 +14,33 @@ function generateUEID() {
   return first + second;
 }
 
+// Utility to detect Next.js environment
+function isNextJs() {
+  // Check if `window` is available (it should be on the client side)
+  if (typeof window === "undefined") {
+    return true; // likely a server-side context
+  }
+  
+  // Next.js might have specific globals, but checking `window` is a good start
+  return false;
+}
+
 export const ToastProvider = (props) => {
   const [toasts, setToasts] = useState([]);
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Detect environment
+  const isNextJsApp = isNextJs();
+  
+  if (isNextJsApp) {
+    // Throw an error or handle it for Next.js apps
+    throw new Error("The Toast component is not available for Next.js apps right now.");
+  }
+
   const open = (content, timer) =>
     setToasts((currentToasts) => [
       ...currentToasts,
@@ -26,6 +51,7 @@ export const ToastProvider = (props) => {
         timer: timer ? Number(timer) : 5000
       }
     ]);
+
   const success = (content, timer) =>
     setToasts((currentToasts) => [
       ...currentToasts,
@@ -36,6 +62,7 @@ export const ToastProvider = (props) => {
         timer: timer ? Number(timer) : 5000
       }
     ]);
+
   const warn = (content, timer) =>
     setToasts((currentToasts) => [
       ...currentToasts,
@@ -46,6 +73,7 @@ export const ToastProvider = (props) => {
         timer: timer ? Number(timer) : 5000
       }
     ]);
+
   const error = (content, timer) =>
     setToasts((currentToasts) => [
       ...currentToasts,
@@ -56,6 +84,7 @@ export const ToastProvider = (props) => {
         timer: timer ? Number(timer) : 5000
       }
     ]);
+
   const info = (content, timer) =>
     setToasts((currentToasts) => [
       ...currentToasts,
@@ -66,34 +95,38 @@ export const ToastProvider = (props) => {
         timer: timer ? Number(timer) : 5000
       }
     ]);
+
   const close = (id) =>
     setToasts((currentToasts) =>
       currentToasts.filter((toast) => toast.id !== id)
     );
+
   const contextValue = useMemo(
     () => ({ open, success, warn, error, info }),
     []
   );
 
+  // Render portal only on client side
   return (
     <ToastContext.Provider value={contextValue}>
       {props.children}
 
-      {createPortal(
-        <div className="lumina-toasts-wrapper">
-          {toasts.map((toast) => (
-            <Toast
-              key={toast.id}
-              type={toast.type}
-              close={() => close(toast.id)}
-              timer={toast.timer}
-            >
-              {toast.content}
-            </Toast>
-          ))}
-        </div>,
-        document.body
-      )}
+      {isClient &&
+        createPortal(
+          <div className="lumina-toasts-wrapper">
+            {toasts.map((toast) => (
+              <Toast
+                key={toast.id}
+                type={toast.type}
+                close={() => close(toast.id)}
+                timer={toast.timer}
+              >
+                {toast.content}
+              </Toast>
+            ))}
+          </div>,
+          document.body
+        )}
     </ToastContext.Provider>
   );
 };
