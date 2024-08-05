@@ -4,7 +4,7 @@
 # dependencies
 node_modules
 package-lock.json
-yarn.json
+yarn.lock
 example/package-lock.json
 
 # builds
