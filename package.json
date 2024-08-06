@@ -1,6 +1,6 @@
 {
-  "name": "@lumina-design/core",
-  "version": "0.0.65",
+  "name": "lumina-design",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -10,6 +10,8 @@
     "build": "node bump-version.js && webpack",
     "start": "webpack serve --mode development --open",
     "watch": "webpack --watch",
+    "add_package_json": "cp -a ./config/* ./dist/ && cp -a README.md dist/.",
+    "publish_package": "rm -rf dist && yarn build && yarn add_package_json && cd dist && npm publish --access public && cd ../",
     "pretty": "onchange 'src/**/*.**' './*.js' './package.json' 'README.md' -- prettier --write {{changed}}"
   },
   "keywords": [],
