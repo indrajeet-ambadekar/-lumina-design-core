@@ -1,0 +1,109 @@
+@import "../../styles/global"; // Ensure this path is correct
+.lumina-auto-complete-wrapper {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  min-width: 50%;
+}
+.lumina-auto-complete-input-cntnr {
+  height: 50px;
+  border: 1px solid $gray-light;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  label {
+    background-color: #fff;
+    top: -10px;
+    left: 10px;
+    z-index: 5;
+    position: absolute;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 4px 4px 0 0;
+  }
+  input {
+    width: 90%;
+    height: 50px;
+    padding: 5px 1rem;
+    font-size: 1rem;
+    color: $blue-persian;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+.lumina-auto-complete-dropdown-toggle {
+  background-color: transparent;
+  @include vertical-center();
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.9s ease;
+
+  svg {
+    width: 26px;
+    height: 26px;
+    path {
+      stroke: $lumina-orange;
+    }
+  }
+}
+.lumina-auto-complete-dropdown-toggle-chevron {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.lumina-auto-complete-dropdown-toggle-chevron-rotate {
+  transform: rotate(180deg);
+}
+
+.lumina-auto-complete-suggested-cntnr {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  @include card-shadow();
+  background-color: #fff;
+  width: 100%;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 5px;
+  border-radius: 6px;
+  z-index: 5;
+}
+.lumina-auto-complete-suggested-row {
+  height: 40px;
+  @include vertical-center-left();
+  font-size: 1rem;
+  color: $gray-davy;
+  padding: 1rem 5px;
+  cursor: pointer;
+  font-weight: 600;
+  &:hover {
+    color: $blue-persian;
+    font-weight: 600;
+  }
+}
+.lumina-autocomplete-clear-btn {
+  cursor: pointer;
+  border: 2px solid $gray-light;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  @include vertical-center();
+  outline: none;
+  margin-right: 10px;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.lumina-icon-wrapper {
+  margin: 5px;
+  @include vertical-center();
+}

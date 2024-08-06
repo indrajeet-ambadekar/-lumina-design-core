@@ -23,7 +23,6 @@
   font-weight: 500;
   cursor: pointer;
   color: $black-raisin;
-  @include Montserrat;
   padding: 10px 1rem;
   display: flex;
   justify-content: space-between;
@@ -33,7 +32,6 @@
 ._acrdn-title {
   font-weight: 500;
   cursor: pointer;
-  @include Montserrat;
   padding: 10px 1rem;
   display: flex;
   justify-content: space-between;

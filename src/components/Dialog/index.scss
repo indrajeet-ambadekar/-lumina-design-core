@@ -1,0 +1,104 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 140;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  * {
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lumina-orange;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lumina-orange;
+    }
+  }
+}
+
+.dialog {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 12px;
+  min-width: 40vw;
+  max-width: 80vw;
+  max-height: 80vh;
+  padding: 1rem;
+  overflow: auto;
+  height: fit-content;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: flex-end;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.dialog-title {
+  font-size: 2rem;
+  padding: 10px 20px;
+}
+.dialog-footer {
+  margin-bottom: 30px;
+}
+.dialog-content-wrapper {
+  line-height: 22px;
+  font-size: inherit;
+  padding: 0.5rem 1rem 1rem 1rem;
+  & > div {
+    overflow-y: auto;
+    padding: 0 1rem 0 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dialog-close-button {
+  @include vertical-center();
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  font-weight: 700;
+  color: $white;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: $lumina-orange;
+  border-radius: 50%;
+}

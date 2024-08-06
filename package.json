@@ -1,13 +1,13 @@
 {
   "name": "@lumina-design/core",
-  "version": "0.0.5",
+  "version": "0.0.65",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "webpack",
+    "build": "node bump-version.js && webpack",
     "start": "webpack serve --mode development --open",
     "watch": "webpack --watch",
     "pretty": "onchange 'src/**/*.**' './*.js' './package.json' 'README.md' -- prettier --write {{changed}}"

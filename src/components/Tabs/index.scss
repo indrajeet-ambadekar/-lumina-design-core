@@ -1,0 +1,84 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.lumina-tab-wrapper {
+  padding: 5px;
+}
+.lumina-tab-cntnr {
+  box-sizing: border-box;
+}
+.lumina-tab-header {
+  border-bottom: 1px solid $gray-isabelline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  & > div {
+    width: fit-content;
+    padding: 9px 20px 6px 20px;
+    display: block;
+    // max-width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+.lumina-tab-header-contained {
+  border-bottom: none;
+}
+.lumina-tab-chip {
+  @include Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.26px;
+  color: $gray-old-silver;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+.lumina-tab-chip-contained {
+  @include Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.26px;
+  color: $gray-old-silver;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 10px;
+  background-color: $gray-isabelline;
+}
+.lumina-active-tab-chip {
+  border-bottom: 3px solid $lumina-orange;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  font-weight: 700;
+  * {
+    color: $lumina-orange;
+  }
+}
+.lumina-active-contained-tab-chip {
+  border: 1px solid $lumina-orange;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  font-weight: 700;
+  background-color: #fff;
+  * {
+    color: $lumina-orange;
+  }
+}
+.lumina-tab {
+  @include Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.26px;
+  color: $gray-old-silver;
+  padding: 20px 5px;
+}

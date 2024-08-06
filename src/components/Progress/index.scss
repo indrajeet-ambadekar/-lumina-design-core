@@ -1,0 +1,117 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.lumina-progress-radial {
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.circle-background,
+.circle-progress,
+.circle-progress-complete {
+  fill: none;
+}
+
+.circle-background {
+  stroke: $gray-light;
+}
+
+.circle-progress {
+  stroke: $lumina-orange;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.8s ease-in 0s;
+}
+.circle-progress-complete {
+  stroke: $green;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.8s ease-in 0s;
+}
+
+.circle-text {
+  @include Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  fill: $lumina-orange;
+}
+.circle-text-complete {
+  @include Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  fill: $green;
+}
+
+.lumina-progress-linear {
+  background-color: $gray-light;
+  padding: 3px;
+  position: relative;
+  margin-top: 80px;
+  border-radius: 22px;
+}
+.lumina-prgs-lnr-label {
+  color: $gray-davy;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+.lumina-prgs-lnr-value {
+  color: $gray-davy;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
+.lumina-prgs-lnr-fill {
+  border-radius: 22px;
+  background-color: $lumina-orange;
+  transition: width 0.8s ease-in 0s;
+}
+.lumina-prgs-lnr-fill-complete {
+  background-color: $green;
+}
+
+.lumina-progress-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  @include vertical-center;
+}
+.lumina-progress-status-red {
+  i {
+    color: $lumina-orange;
+    font-size: 20px;
+  }
+  svg {
+    path {
+      stroke: $lumina-orange;
+    }
+  }
+}
+.lumina-progress-status-green {
+  i {
+    color: $green;
+    font-size: 20px;
+  }
+  svg {
+    path {
+      stroke: $green;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "../../styles/global"; // Ensure this path is correct
+.lumina-tab-select-wrapper {
+  padding: 1rem 0;
+  @include vertical-center-left();
+  flex-direction: column;
+}
+.lumina-tab-select-label {
+  @include Montserrat;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 35px;
+}
+.lumina-tab-select-option-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+.lumina-tab-select-option {
+  border: none; //1px solid $black-raisin;
+  @include card-shadow();
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin: 10px 10px 10px 0;
+  @include vertical-center();
+  font-size: 14px;
+  @include Montserrat();
+  cursor: pointer;
+  background-color: transparent; //$gray-isabelline;
+  font-weight: 700;
+  color: $black-raisin;
+}
+.lumina-tab-select-option-selected {
+  background-color: $lumina-orange;
+  color: $white;
+  svg {
+    path {
+      stroke: #fff;
+    }
+  }
+}

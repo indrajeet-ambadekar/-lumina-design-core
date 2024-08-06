@@ -1,0 +1,118 @@
+@import "../../styles/global"; // Ensure this path is correct
+.lumina-dropdown {
+  margin-top: 30px;
+  width: auto;
+  border-radius: 6px;
+  border: 1px solid $gray-light;
+  background-color: white;
+  position: relative;
+}
+.lumina-select-label {
+  position: absolute;
+  left: -2px;
+  top: -18px;
+  font-size: 11px;
+  font-weight: 800;
+  @include Montserrat;
+  color: $blue-persian;
+  background-color: $white;
+  padding: 2px 9px;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+.lumina-select-label-visible {
+  opacity: 1;
+  background-color: transparent;
+  top: -25px;
+}
+.lumina-dropdown-header {
+  height: 40px;
+  padding: 5px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include Montserrat;
+}
+.lumina-dropdown-value {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.lumina-dropdown-body {
+  padding: 0px;
+  @include Montserrat;
+  font-weight: 500;
+  border: 1px solid $gray-light;
+  border-radius: 6px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  background-color: $white;
+  z-index: 50;
+}
+
+.lumina-dropdown-body-open {
+  display: block;
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.lumina-dropdown-item {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 40px;
+}
+.lumina-dropdown-item-selected {
+  color: $white;
+  background-color: $blue-persian;
+  font-weight: 500;
+}
+
+.lumina-dropdown-item:hover {
+  cursor: pointer;
+  // color: $white;
+  background-color: $gray-isabelline;
+  font-weight: 500;
+}
+
+.lumina-dropdown-item-dot {
+  opacity: 0;
+  color: #91a5be;
+  transition: all 0.2s ease-in-out;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.lumina-dropdown-item-dot-selected {
+  opacity: 1;
+}
+
+.lumina-dropdown-icon {
+  font-size: 13px;
+  color: #91a5be;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in-out;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.lumina-dropdown-icon-open {
+  transform: rotate(180deg);
+}
+.lumina-dropdown-focused {
+  border: 1px solid $blue-persian;
+}

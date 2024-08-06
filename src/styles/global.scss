@@ -1,7 +1,7 @@
 @mixin Montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: inherit;
 }
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 $red-carnelian: rgba(196, 49, 33, 0.75);
 $lumina-orange: rgb(237, 81, 63);
@@ -34,8 +34,8 @@ $button-seconday: #f9f9f9;
 }
 @mixin vertical-center-right {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
 }
 body {
   &::-webkit-scrollbar {
@@ -154,14 +154,14 @@ body {
   }
   .lumina-header-app-logo {
     @include vertical-center-left;
+    height: 40px;
+    width: 80%;
+    max-width: 80%;
     img {
       // height: auto;
       max-height: 20px;
       margin: 0 10px;
     }
-    height: 40px;
-    width: 80%;
-    max-width: 80%;
   }
   .lumina-header-profile-wrapper {
     height: 40px;
@@ -204,13 +204,13 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    * {
-      transform: scale(0.8);
-    }
     z-index: 5;
     max-height: 50vh;
     overflow-x: hidden;
     overflow-y: auto;
+    * {
+      transform: scale(0.8);
+    }
   }
   .lumina-bottom-navigation {
     width: 100vw;

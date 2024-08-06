@@ -1,0 +1,83 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.lumina-radio-button {
+  margin: 15px 0px;
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    position: relative;
+    font-size: inherit;
+    padding-left: 1.2rem;
+    @include Montserrat;
+  }
+
+  label::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border: 2px solid $gray-light;
+    border-radius: 50%;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+    transition: border-color 400ms ease;
+  }
+
+  label::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: $lumina-orange;
+    border: 2px solid $lumina-orange;
+    border-radius: 50%;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%) scale(0);
+    transition: transform 400ms ease;
+  }
+
+  input[type="radio"]:checked + label::before {
+    border-color: $lumina-orange;
+  }
+
+  input[type="radio"]:checked + label::after {
+    transform: translateY(-50%) scale(0.55);
+  }
+}
+.lumina-radio-label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $black-raisin;
+}
+.lumina-radio-button-disabled {
+  label::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: $gray-light;
+    border: 2px solid $gray-light;
+    border-radius: 50%;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%) scale(0);
+    transition: transform 400ms ease;
+    pointer-events: none;
+  }
+  .lumina-radio-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-light;
+    cursor: not-allowed;
+  }
+}

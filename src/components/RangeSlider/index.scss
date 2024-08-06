@@ -1,0 +1,58 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.lumina-slider-wrapper {
+  display: block;
+  padding: 1rem 1.3rem;
+}
+.lumina-range-slider {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  border-radius: 6px;
+  margin: 10px 0;
+  height: 8px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0.2, $red-carnelian),
+    color-stop(0.2, $gray-light)
+  );
+  transition: all 0.3s ease-in 0s;
+}
+
+.lumina-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background-color: $lumina-orange;
+  border: 1px solid $red-carnelian;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in 0s;
+  cursor: pointer;
+  &:hover {
+    border-width: 4px;
+  }
+}
+.lumina-slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lumina-slider-label {
+  color: $gray-davy;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: "Montserrat";
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 50%;
+  b {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}

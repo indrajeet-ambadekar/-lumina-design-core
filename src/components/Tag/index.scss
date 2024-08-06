@@ -1,0 +1,78 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.lumina-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: 22px;
+  background-color: #e5f0ff;
+  color: $blue-persian;
+  @include Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 14px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.32px;
+  margin: 5px;
+  text-transform: capitalize;
+}
+.lumina-tag-default {
+  background-color: #e5f0ff;
+  color: $blue-persian;
+}
+.lumina-tag-default-dark {
+  color: #fff;
+  background-color: $blue-persian;
+}
+.lumina-tag-success {
+  background-color: #e3fff1;
+  color: #05a660;
+}
+.lumina-tag-success-dark {
+  color: #fff;
+  background-color: #05a660;
+}
+.lumina-tag-inprogress {
+  background-color: $blue-alice;
+  color: $blue-bolt;
+}
+.lumina-tag-inprogress-dark {
+  color: #fff;
+  background-color: $blue-bolt;
+}
+.lumina-tag-error {
+  background-color: #ffe5e5;
+  color: $lumina-orange;
+}
+.lumina-tag-error-dark {
+  color: #fff;
+  background-color: $lumina-orange;
+}
+.lumina-tag-warn,
+.lumina-tag-pending {
+  background-color: #fff8e5;
+  color: #e57a00;
+}
+.lumina-tag-warn-dark,
+.lumina-tag-pending-dark {
+  color: #fff;
+  background-color: #e57a00;
+}
+.lumina-tag-info {
+  background-color: $gray-isabelline;
+  color: $black-raisin;
+}
+.lumina-tag-info-dark {
+  color: #fff;
+  background-color: $gray-old-silver;
+}
+.lumina-tag-unavailable {
+  background-color: $gray-isabelline;
+  color: $gray-old-silver;
+}
+.lumina-tag-unavailable-dark {
+  background-color: $gray-old-silver;
+  color: $gray-light;
+}

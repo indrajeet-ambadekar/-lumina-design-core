@@ -1,0 +1,127 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.toggle-switch {
+  position: relative;
+  margin: 10px 0;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-align: left;
+  &-checkbox {
+    display: none;
+  }
+
+  &.small-switch {
+    width: 40px;
+    .toggle-switch-inner {
+      &:after,
+      &:before {
+        content: "";
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+    .toggle-switcher {
+      width: 16px;
+      right: 20px;
+      margin: 2px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    transform: scale(0.9);
+  }
+  @media screen and (max-width: 767px) {
+    transform: scale(0.825);
+  }
+  @media screen and (max-width: 575px) {
+    transform: scale(0.75);
+  }
+}
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid $gray-isabelline;
+  border-radius: 6px;
+  margin: 0;
+  &:focus {
+    outline: none;
+    > span {
+      box-shadow: 0 0 2px 5px red;
+    }
+  }
+  > span:focus {
+    outline: none;
+  }
+}
+.toggle-switch-checkbox:checked + .toggle-switch-label {
+  .toggle-switch-inner {
+    margin-left: 0;
+  }
+  .toggle-switcher {
+    right: 0px;
+  }
+}
+.toggle-switcher {
+  display: block;
+  width: 40px;
+  margin: 5px;
+  background: $lumina-orange;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  right: 45px;
+  border: 0 solid $gray-isabelline;
+  border-radius: 6px;
+  transition: all 0.3s ease-in 0s;
+  &:after {
+    left: 0;
+  }
+}
+
+.toggle-switch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  &:before,
+  &:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 34px;
+    padding: 0;
+    line-height: 34px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  &:before {
+    content: attr(data-yes);
+    text-transform: uppercase;
+    padding-left: 10px;
+    background-color: $white;
+    color: $lumina-orange;
+    font-weight: 800;
+  }
+}
+.toggle-switch-disabled {
+  background-color: $gray-davy;
+  cursor: not-allowed;
+  &:before {
+    background-color: $gray-davy;
+    cursor: not-allowed;
+  }
+}
+.toggle-switch-inner:after {
+  content: attr(data-no);
+  text-transform: uppercase;
+  padding-right: 10px;
+  background-color: $white;
+  color: $lumina-orange;
+  text-align: right;
+}

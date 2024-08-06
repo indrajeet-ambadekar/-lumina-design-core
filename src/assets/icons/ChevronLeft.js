@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgChevronRight = ({ title, titleId, ...props }) => (
+const SvgChevronLeft = ({ title, titleId, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -15,8 +15,8 @@ const SvgChevronRight = ({ title, titleId, ...props }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      d="m9 18 6-6-6-6"
+      d="m15 18-6-6 6-6"
     />
   </svg>
 );
-export default SvgChevronRight;
+export default SvgChevronLeft;

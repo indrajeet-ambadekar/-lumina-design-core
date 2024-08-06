@@ -1,0 +1,96 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.avatar {
+  margin: 10px 0;
+  min-width: 24px;
+  max-width: 80px;
+  min-height: 24px;
+  max-height: 80px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $lumina-orange;
+  color: $white;
+  font-weight: 700;
+  * {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-transform: uppercase;
+  }
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $white;
+    height: 100%;
+    font-size: inherit;
+  }
+  svg {
+    path {
+      stroke: $white;
+    }
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+.avatar-S {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  @include vertical-center();
+  i {
+    font-size: 12px;
+  }
+}
+.avatar-M {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  @include vertical-center();
+  i {
+    font-size: 30px;
+  }
+}
+.avatar-L {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  @include vertical-center();
+  i {
+    font-size: 38px;
+  }
+}
+.avatar-XL {
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  @include vertical-center();
+  i {
+    font-size: 42px;
+  }
+}
+.avatar-XXL {
+  width: 64px;
+  height: 64px;
+  font-size: 32px;
+  @include vertical-center();
+  i {
+    font-size: 62px;
+  }
+}
+.avatar-3XL {
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  @include vertical-center();
+  i {
+    font-size: 78px;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+a.lumina-link {
+  color: $lumina-orange;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding: 3px 0;
+
+  @include Montserrat;
+  font-size: inherit;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 0 8px 0 0;
+  display: inline;
+  &.lumina-link-small {
+    font-size: 10px;
+  }
+  &.lumina-link-medium {
+    font-size: 13px;
+  }
+  &.lumina-link-large {
+    font-size: 16px;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 2px solid $lumina-orange;
+  }
+}
+a.lumina-link-disabled {
+  color: $gray-old-silver;
+  pointer-events: none;
+  cursor: not-allowed;
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: none;
+  }
+}

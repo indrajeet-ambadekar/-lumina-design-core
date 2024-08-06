@@ -1,0 +1,170 @@
+/* src/Datepicker.scss */
+@import "../../styles/global"; // Ensure this path is correct
+
+.datepicker {
+  position: relative;
+  display: inline-block;
+  border: 1px solid $gray-light;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  height: 45px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  label {
+    font-size: 13px;
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    color: rgba(41, 41, 41, 0.75);
+    font-weight: bold;
+  }
+  .input-wrapper {
+    width: 100%;
+    @include vertical-center-left;
+    justify-content: space-between;
+    gap: 5px;
+    input {
+      width: calc(100% - 50px);
+      padding: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      height: 45px;
+      border: none;
+      outline: none;
+      width: inherit;
+      max-width: 100%;
+      padding: 5px 20px;
+      font-size: 15px;
+      box-sizing: border-box;
+      font-weight: bold;
+      background-color: transparent;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      height: 45px;
+      width: 45px;
+      @include vertical-center;
+      svg {
+        path {
+          fill: $lumina-orange;
+        }
+      }
+    }
+  }
+}
+
+.calendar {
+  position: absolute;
+  top: 48px;
+  border-radius: 8px;
+  left: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 1000;
+  width: 240px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 3rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  span {
+    color: $lumina-orange;
+    font-size: 14px;
+  }
+  button {
+    cursor: pointer;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); // 7 columns
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 11px;
+  color: #333; // Adjust color as needed
+}
+
+.calendar-weekday {
+  text-align: center;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); // 7 columns
+  gap: 4px; // Space between days
+}
+
+.calendar-day {
+  font-size: 12px;
+  font-weight: 500;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 8px;
+  color: #545454;
+}
+
+.calendar-day:focus {
+  background-color: #e0e0e0;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.calendar-day.selected {
+  background-color: $lumina-orange;
+  color: white;
+}
+
+.calendar-day.today {
+  border: 2px solid $lumina-orange;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  pointer-events: none;
+  cursor: default;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}

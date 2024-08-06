@@ -1,0 +1,42 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.lumina-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 40px;
+  padding: 5px 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.lumina-breadcrumb-crumb {
+  margin: 0 10px 0 0px;
+  @include vertical-center-left;
+}
+.lumina-breadcrumb-label {
+  cursor: pointer;
+  @include vertical-center-left;
+
+  span {
+    max-width: 100px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.32px;
+    color: $lumina-orange;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+.lumina-breadcrumb-chevron {
+  margin-left: 10px;
+  padding-top: 2px;
+  svg {
+    path {
+      stroke: $blue-persian;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+@import "../../styles/global"; // Ensure this path is correct
+
+.tooltipStyleChange {
+  color: #006080;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltiptext {
+  cursor: default;
+  display: none;
+  position: absolute;
+  width: fit-content;
+  min-width: 250px;
+  text-align: center;
+  border-radius: 6px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.tooltiptext-light {
+  background-color: #ffffff;
+  color: #fff;
+  border: 1px solid $gray-davy;
+  background-color: $gray-davy;
+  transition: all 0.2s ease-in 0s;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  @include Montserrat;
+  letter-spacing: 0.26px;
+  width: max-content;
+  padding: 10px 16px;
+  max-width: 400px;
+  max-height: 200px;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.tooltip:hover .tooltiptext {
+  display: block;
+  opacity: 1;
+}
+
+.tooltip-bottom {
+  top: 140%;
+  left: -10px;
+}
+
+.tooltip-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-left: 0px;
+  height: 300px;
+}
+
+.tooltip-top {
+  bottom: 140%;
+  left: -10px;
+}
+
+.tooltip-top::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-left: 0px;
+  height: fit-content;
+}
+
+.tooltip-title {
+  @include Montserrat;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.tooltip-body {
+  @include Montserrat;
+  text-align: left;
+  @include vertical-center-left;
+  * {
+    color: #fff;
+    button {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      border-radius: 6px;
+      height: 25px;
+      margin: 10px 0;
+      width: max-content;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      svg {
+        path {
+          stroke: transparent;
+        }
+      }
+      &:first-child {
+        background-color: #fff;
+        color: $lumina-orange;
+      }
+      &:last-child {
+        background-color: $lumina-orange;
+        color: #fff;
+        margin-left: 10px;
+      }
+    }
+  }
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
