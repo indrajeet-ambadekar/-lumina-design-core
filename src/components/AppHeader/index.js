@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./AppHeader.scss";
-import CloseIcon from "../../assets/icons/Close.js"
+import CloseIcon from "../../assets/icons/Close.js";
 import BarsIcon from "../../assets/icons/Bars.js";
 
 const AppHeader = ({ ...props }) => {
@@ -44,23 +44,14 @@ const AppHeader = ({ ...props }) => {
   return (
     <div
       ref={headerRef}
-      className={[
-        "lumina-header-wrapper",
-        props.className || ""
-      ].join(" ")}
+      className={["lumina-header-wrapper", props.className || ""].join(" ")}
       id={props.id || null}
       style={props.style || {}}
     >
-      <div
-        className={[
-          "lumina-header-app-logo"
-        ].join(" ")}
-      >
+      <div className={["lumina-header-app-logo"].join(" ")}>
         {props.children && (
           <button
-            className={[
-              "lumina-header-hamburger-btn"
-            ].join(" ")}
+            className={["lumina-header-hamburger-btn"].join(" ")}
             onClick={_handleClick}
           >
             {menuOpen ? <CloseIcon /> : <BarsIcon />}
@@ -79,11 +70,7 @@ const AppHeader = ({ ...props }) => {
         )}
         {props.secondaryIcon}
       </div>
-      <div
-        className={[
-          "lumina-header-nav-cntnr"
-        ].join(" ")}
-      >
+      <div className={["lumina-header-nav-cntnr"].join(" ")}>
         {React.Children.map(props.children, (child, index) => (
           <React.Fragment key={index}>
             {React.cloneElement(child, {
@@ -97,19 +84,13 @@ const AppHeader = ({ ...props }) => {
           </React.Fragment>
         ))}
       </div>
-      <div
-        className={[
-          "lumina-header-profile-wrapper"
-        ].join(" ")}
-      >
+      <div className={["lumina-header-profile-wrapper"].join(" ")}>
         {props.profileIcon}
       </div>
       {menuOpen && (
         <div
           ref={menuRef}
-          className={[
-            "lumina-header-hamburger-menu"
-          ].join(" ")}
+          className={["lumina-header-hamburger-menu"].join(" ")}
         >
           {React.Children.map(props.children, (child, index) => (
             <React.Fragment key={index}>

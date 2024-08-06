@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef, useState } from "react";
-import "./InputField.scss"
+import "./InputField.scss";
 
 export default ({ ...props }) => {
   var {
@@ -55,9 +54,7 @@ export default ({ ...props }) => {
       {label && <label>{label}</label>}
 
       {iconLeft && (
-        <span
-          className={["lumina-input-icon-left", "icon-left"].join(" ")}
-        >
+        <span className={["lumina-input-icon-left", "icon-left"].join(" ")}>
           {iconLeft}
         </span>
       )}
@@ -82,7 +79,7 @@ export default ({ ...props }) => {
         onKeyDown={props.onKeyDown}
         onKeyUp={props.onKeyUp}
         onKeyPress={props.onKeyPress}
-        role='presentation'
+        role="presentation"
         autoComplete={
           ["text", "email", "mobile"].includes(type) ? "off" : "new-password"
         }
@@ -92,17 +89,13 @@ export default ({ ...props }) => {
         ref={inputEl}
       />
       {iconRight && (
-        <span
-          className={["lumina-input-icon-right", "icon-right"].join(
-            " "
-          )}
-        >
+        <span className={["lumina-input-icon-right", "icon-right"].join(" ")}>
           {iconRight}
         </span>
       )}
 
       {/* Optional Fallback for Browser Quirks */}
-      <input type='text' autoComplete='on' style={{ display: "none" }} />
+      <input type="text" autoComplete="on" style={{ display: "none" }} />
     </div>
   );
 };

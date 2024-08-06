@@ -58,17 +58,11 @@ export const Toast = (props) => {
       title={props.children}
     >
       {toastTypeMap[props.type || "default"]}
-      <div
-        className="lumina-toast__text"
-      >
-        {props.children}
-      </div>
+      <div className="lumina-toast__text">{props.children}</div>
       <div>
         <button
           onClick={props.close}
-          className={[
-            "lumina-toast__close-btn"
-          ].join(" ")}
+          className={["lumina-toast__close-btn"].join(" ")}
         >
           &times;
         </button>

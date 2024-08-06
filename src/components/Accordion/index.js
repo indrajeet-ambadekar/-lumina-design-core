@@ -34,12 +34,8 @@ export default ({ ...props }) => {
       <div
         className={
           openIcon && collapseIcon
-            ? `_acrdn-title-custom ${
-                isOpen ? "_acrdn-open" : "_acrdn-closed"
-              }`
-            : ` _acrdn-title ${
-                isOpen ? "_acrdn-open" : "_acrdn-closed"
-              }`
+            ? `_acrdn-title-custom ${isOpen ? "_acrdn-open" : "_acrdn-closed"}`
+            : ` _acrdn-title ${isOpen ? "_acrdn-open" : "_acrdn-closed"}`
         }
         onClick={() => {
           if (!actionDisabled) setOpen(!isOpen);
@@ -47,9 +43,7 @@ export default ({ ...props }) => {
       >
         {title}
         {openIcon && collapseIcon && (
-          <div
-            className={` accordion_collapse-controls`}
-          >
+          <div className={` accordion_collapse-controls`}>
             {isOpen ? collapseIcon : openIcon}
           </div>
         )}
@@ -59,11 +53,7 @@ export default ({ ...props }) => {
           !isOpen ? "_acrdn-collapsed" : "_acrdn-expanded"
         }`}
       >
-        <div
-          className={["_acrdn-content", "lumina-acrdn-content"].join(
-            " "
-          )}
-        >
+        <div className={["_acrdn-content", "lumina-acrdn-content"].join(" ")}>
           {children}
         </div>
       </div>

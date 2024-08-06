@@ -1,0 +1,22 @@
+# Prettier configuration file
+
+# Use single quotes instead of double quotes around strings
+singleQuote: false
+
+# Use single quotes for JSX attributes
+jsxSingleQuote: true
+
+# Add semicolons at the end of statements
+semi: true
+
+# Indent lines with 2 spaces
+tabWidth: 2
+
+# Add spaces inside braces in object literals
+bracketSpacing: true
+
+# Include parentheses around a sole arrow function parameter
+arrowParens: always
+
+# Do not add trailing commas at the end of objects and arrays
+trailingComma: none

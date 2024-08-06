@@ -20,7 +20,7 @@ function isNextJs() {
   if (typeof window === "undefined") {
     return true; // likely a server-side context
   }
-  
+
   // Next.js might have specific globals, but checking `window` is a good start
   return false;
 }
@@ -28,17 +28,19 @@ function isNextJs() {
 export const ToastProvider = (props) => {
   const [toasts, setToasts] = useState([]);
   const [isClient, setIsClient] = useState(false);
-  
+
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   // Detect environment
   const isNextJsApp = isNextJs();
-  
+
   if (isNextJsApp) {
     // Throw an error or handle it for Next.js apps
-    throw new Error("The Toast component is not available for Next.js apps right now.");
+    throw new Error(
+      "The Toast component is not available for Next.js apps right now."
+    );
   }
 
   const open = (content, timer) =>
