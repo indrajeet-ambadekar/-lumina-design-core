@@ -36,13 +36,10 @@ const Tooltip = ({
   }, [position]);
 
   return (
-    <div
-      className={`tooltip ${containerClass} ${dynamicPosition ? `tooltip-${dynamicPosition}` : ""}`}
-      ref={tooltipRef}
-    >
+    <div className={`tooltip ${containerClass} `} ref={tooltipRef}>
       {children}
       <div
-        className={`tooltiptext tooltiptext-${theme} tooltip-${dynamicPosition}`}
+        className={`tooltiptext tooltiptext-${theme} ${dynamicPosition ? `tooltip-${dynamicPosition}` : ""}`}
         ref={tooltipTextRef}
       >
         <div className="tooltip-title">{title}</div>
