@@ -24,4 +24,4 @@ yarn add @lumina-design/core @lumina-design/iconify
 
 ## Authors
 
-- [@indrajeet-ambadekar](https://github.com/indrajeet-ambadekar)
+- [@indrajeet-ambadekar](https://github.com/indrajeet-ambadekar) [Website](https://www.indrajeetambadekar.com)
