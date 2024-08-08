@@ -11,7 +11,7 @@ const Carousel = ({
   className,
   id
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(loop ? 1 : 0); // Start from the first slide if loop is false
+  const [currentIndex, setCurrentIndex] = useState(loop ? 1 : 0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -134,6 +134,10 @@ const Carousel = ({
     return () => clearInterval(interval);
   }, [slideShowInterval]);
 
+  const dotIndex = loop
+    ? (currentIndex === 0 ? totalSlides - 1 : currentIndex - 1) % totalSlides
+    : currentIndex;
+
   return (
     <div
       className={`carousel ${className}`}
@@ -148,7 +152,7 @@ const Carousel = ({
       <button
         onClick={prevSlide}
         className="carousel-button"
-        disabled={!loop && currentIndex === 0} // Disable Prev button if loop is false and on the first slide
+        disabled={!loop && currentIndex === 0}
       >
         <ChevronLeftIcon width={16} height={16} />
       </button>
@@ -179,7 +183,7 @@ const Carousel = ({
       <button
         onClick={nextSlide}
         className="carousel-button"
-        disabled={!loop && currentIndex === totalSlides - 1} // Disable Next button if loop is false and on the last slide
+        disabled={!loop && currentIndex === totalSlides - 1}
       >
         <ChevronRightIcon width={16} height={16} />
       </button>
@@ -188,12 +192,7 @@ const Carousel = ({
           {React.Children.map(children, (_, index) => (
             <span
               key={index}
-              className={`carousel-dot ${
-                (loop && index === currentIndex - 1) ||
-                (!loop && index === currentIndex)
-                  ? "active"
-                  : ""
-              }`}
+              className={`carousel-dot ${index === dotIndex ? "active" : ""}`}
               onClick={() =>
                 !isTransitioning && setCurrentIndex(loop ? index + 1 : index)
               }
