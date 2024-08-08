@@ -95,19 +95,20 @@ body {
 
 // Define default theme variables
 :root {
-  --primary-color: #23789f; /* Default light theme primary color */
-  --secondary-color: #f9f9f9;
+  --primary-color: #23789f;
+  --secondary-color: #58595b;
   --background-color: #ffffff;
   --text-color: #231f20;
+
   --button-primary-bg: rgb(237, 81, 63);
   --button-secondary-bg: #f2f0f0;
   --button-text-color: #fff;
   --button-disabled-bg: #d1d3d4;
   --overlay-background: rgba(0, 0, 0, 1);
 
-  --focus-border-color: #005e9e; /* Default focus border color */
-  --focus-label-color: #005e9e; /* Default focus label color */
-  --border-color: #d1d3d4; /* Default border color */
+  --focus-border-color: #005e9e; /* Light theme focus border color */
+  --focus-label-color: #005e9e; /* Light theme focus label color */
+  --border-color: #d1d3d4; /* Orange theme border color */
 }
 
 [data-theme="light"] {
