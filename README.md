@@ -4,8 +4,24 @@ This guide will help you integrate the `lumina-design` library into your React a
 
 ## Installation
 
-Firstly, install the `lumina-design` library and its icons into your React application using the following command:
+Firstly, install the `@lumina-design/core` library and its icons into your React application using the following command:
+
+### Using NPM
 
 ```sh
-npm i lumina-design lumina-design-icons --save
+npm i @lumina-design/core @lumina-design/iconify --save
 ```
+
+### Using YARN
+
+```sh
+yarn add @lumina-design/core @lumina-design/iconify
+```
+
+## Documentation
+
+[Visit the official documenation website](https://library.elysium-cloud.com)
+
+## Authors
+
+- [@indrajeet-ambadekar](https://github.com/indrajeet-ambadekar)
