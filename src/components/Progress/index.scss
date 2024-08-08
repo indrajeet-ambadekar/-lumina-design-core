@@ -4,7 +4,9 @@
   display: block;
   margin: 15px auto;
   position: relative;
-  background-color: #fff;
+  background-color: var(
+    --background-color
+  ); /* Updated to use the CSS variable */
   border-radius: 50%;
 }
 
@@ -15,17 +17,18 @@
 }
 
 .circle-background {
-  stroke: $gray-light;
+  stroke: var(--border-color); /* Updated to use the CSS variable */
 }
 
 .circle-progress {
-  stroke: $lumina-orange;
+  stroke: var(--primary-color); /* Updated to use the CSS variable */
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: all 0.8s ease-in 0s;
 }
+
 .circle-progress-complete {
-  stroke: $green;
+  stroke: var(--focus-border-color); /* Updated to use the CSS variable */
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: all 0.8s ease-in 0s;
@@ -35,24 +38,26 @@
   @include Montserrat;
   font-size: 12px;
   font-weight: 500;
-  fill: $lumina-orange;
+  fill: var(--primary-color); /* Updated to use the CSS variable */
 }
+
 .circle-text-complete {
   @include Montserrat;
   font-size: 12px;
   font-weight: 500;
-  fill: $green;
+  fill: var(--focus-border-color); /* Updated to use the CSS variable */
 }
 
 .lumina-progress-linear {
-  background-color: $gray-light;
+  background-color: var(--border-color); /* Updated to use the CSS variable */
   padding: 3px;
   position: relative;
   margin-top: 80px;
   border-radius: 22px;
 }
+
 .lumina-prgs-lnr-label {
-  color: $gray-davy;
+  color: var(--border-color); /* Updated to use the CSS variable */
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
@@ -62,8 +67,9 @@
   top: -20px;
   left: 0;
 }
+
 .lumina-prgs-lnr-value {
-  color: $gray-davy;
+  color: var(--border-color); /* Updated to use the CSS variable */
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
@@ -73,13 +79,17 @@
   top: -20px;
   right: 0;
 }
+
 .lumina-prgs-lnr-fill {
   border-radius: 22px;
-  background-color: $lumina-orange;
+  background-color: var(--primary-color); /* Updated to use the CSS variable */
   transition: width 0.8s ease-in 0s;
 }
+
 .lumina-prgs-lnr-fill-complete {
-  background-color: $green;
+  background-color: var(
+    --focus-border-color
+  ); /* Updated to use the CSS variable */
 }
 
 .lumina-progress-status {
@@ -93,25 +103,27 @@
   border-radius: 50%;
   @include vertical-center;
 }
+
 .lumina-progress-status-red {
   i {
-    color: $lumina-orange;
+    color: var(--primary-color); /* Updated to use the CSS variable */
     font-size: 20px;
   }
   svg {
     path {
-      stroke: $lumina-orange;
+      stroke: var(--primary-color); /* Updated to use the CSS variable */
     }
   }
 }
+
 .lumina-progress-status-green {
   i {
-    color: $green;
+    color: var(--focus-border-color); /* Updated to use the CSS variable */
     font-size: 20px;
   }
   svg {
     path {
-      stroke: $green;
+      stroke: var(--focus-border-color); /* Updated to use the CSS variable */
     }
   }
 }

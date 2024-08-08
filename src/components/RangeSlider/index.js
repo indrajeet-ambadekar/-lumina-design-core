@@ -50,15 +50,9 @@ export default function RangeSlider({ ...props }) {
         step={step || 1}
         onChange={(e) => _handleDrag(e.target.value)}
         style={{
-          backgroundImage:
-            "-webkit-gradient(linear, left top, right top, " +
-            "color-stop(" +
-            barVal +
-            ", #b11116), " +
-            "color-stop(" +
-            barVal +
-            ", #d1d3d4)" +
-            ")"
+          backgroundImage: `-webkit-gradient(linear, left top, right top, 
+            color-stop(${barVal}, var(--primary-color)), 
+            color-stop(${barVal}, var(--secondary-color)))`
         }}
       />
       <div className="lumina-slider-label-row">

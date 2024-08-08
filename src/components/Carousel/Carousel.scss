@@ -61,8 +61,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: var(--primary-color, rgba(0, 0, 0, 0.5));
+  color: var(--text-color, white);
   border: none;
   padding: 5px;
   cursor: pointer;
@@ -71,11 +71,12 @@
   width: 30px;
   height: 30px;
   @include vertical-center;
+
   svg {
     width: 24px;
     height: 24px;
     path {
-      stroke: $white;
+      stroke: var(--text-color, white);
     }
   }
 }
@@ -98,14 +99,14 @@
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: $gray-old-silver;
+  background-color: var(--secondary-color, $gray-old-silver);
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
 }
 
 .carousel-dot.active {
-  background-color: $lumina-orange;
+  background-color: var(--primary-color, $lumina-orange);
 }
 
 @media screen and (min-width: 1024px) {

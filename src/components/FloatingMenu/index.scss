@@ -24,22 +24,39 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     svg {
       path {
-        stroke: #fff;
+        stroke: var(
+          --button-text-color,
+          $white
+        ); // Use theme variable for SVG stroke color
       }
     }
+
     &.main-button {
       z-index: 20;
-      background-color: $lumina-orange;
-      color: $white;
+      background-color: var(
+        --button-primary-bg,
+        $lumina-orange
+      ); // Use theme variable for background color
+      color: var(
+        --button-text-color,
+        $white
+      ); // Use theme variable for text color
     }
 
     &.sub-button {
       opacity: 0;
-      background-color: $blue-persian;
-      color: #ffffff;
-      border: 2px solid $white;
+      background-color: var(
+        --primary-color,
+        $blue-persian
+      ); // Use theme variable for background color
+      color: var(
+        --button-text-color,
+        $white
+      ); // Use theme variable for text color
+      border: 2px solid var(--button-text-color, $white); // Use theme variable for border color
     }
   }
 }
@@ -49,4 +66,5 @@
   display: inline-flex;
   align-items: center;
   font-size: 20px;
+  color: var(--text-color, $black-raisin); // Use theme variable for text color
 }

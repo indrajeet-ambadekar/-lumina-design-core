@@ -1,28 +1,16 @@
 @import "../../styles/global"; // Ensure this path is correct
-.lumina-resizable-panel {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.lumina-left-container,
-.lumina-right-container {
-  overflow: auto;
-  padding: 5px 15px;
-}
-
-.lumina-resize-handle {
-  cursor: col-resize;
-  background-color: #e0e0e0;
-  width: 10px;
-  height: 100%;
-}
 
 .lumina-resizable-panel {
   display: flex;
   width: 100%;
   height: 100%;
   user-select: none; /* Prevents text selection during drag */
+}
+
+.lumina-left-container,
+.lumina-right-container {
+  overflow: auto;
+  padding: 5px 15px;
 }
 
 .lumina-left-container {
@@ -43,7 +31,7 @@
   width: 10px;
   height: 100%;
   cursor: col-resize;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--border-color); // Theme border color
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -53,8 +41,9 @@
 
 .lumina-resize-handle svg {
   pointer-events: none; /* Allows handle to be draggable without interference */
+
   path {
-    stroke: $lumina-orange;
+    stroke: var(--primary-color); // Theme primary color
   }
 }
 
@@ -65,6 +54,6 @@ body.lumina-resizing {
 .lumina-markdown-container {
   line-height: 1.5;
   white-space: pre-wrap;
-  background-color: $white;
+  background-color: var(--background-color); // Theme background color
   padding: 1rem 10px;
 }

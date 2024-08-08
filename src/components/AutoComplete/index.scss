@@ -1,22 +1,25 @@
 @import "../../styles/global"; // Ensure this path is correct
+
 .lumina-auto-complete-wrapper {
   width: fit-content;
   height: fit-content;
   position: relative;
   min-width: 50%;
 }
+
 .lumina-auto-complete-input-cntnr {
   height: 50px;
-  border: 1px solid $gray-light;
+  border: 1px solid var(--secondary-color); // Use theme secondary color for the border
   border-radius: 6px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: #fff;
+  background-color: var(--background-color); // Use theme background color
+
   label {
-    background-color: #fff;
+    background-color: var(--background-color); // Use theme background color
     top: -10px;
     left: 10px;
     z-index: 5;
@@ -26,18 +29,20 @@
     padding: 3px 7px;
     border-radius: 4px 4px 0 0;
   }
+
   input {
     width: 90%;
     height: 50px;
     padding: 5px 1rem;
     font-size: 1rem;
-    color: $blue-persian;
+    color: var(--primary-color); // Use theme primary color for input text
     font-weight: 600;
     border: none;
     outline: none;
     background-color: transparent;
   }
 }
+
 .lumina-auto-complete-dropdown-toggle {
   background-color: transparent;
   @include vertical-center();
@@ -49,11 +54,13 @@
   svg {
     width: 26px;
     height: 26px;
+
     path {
-      stroke: $lumina-orange;
+      stroke: var(--primary-color); // Use theme primary color for the icon
     }
   }
 }
+
 .lumina-auto-complete-dropdown-toggle-chevron {
   display: inline-block;
   transition: transform 0.3s ease;
@@ -68,7 +75,7 @@
   top: 55px;
   left: 0;
   @include card-shadow();
-  background-color: #fff;
+  background-color: var(--background-color); // Use theme background color
   width: 100%;
   max-height: 300px;
   overflow-x: hidden;
@@ -77,22 +84,25 @@
   border-radius: 6px;
   z-index: 5;
 }
+
 .lumina-auto-complete-suggested-row {
   height: 40px;
   @include vertical-center-left();
   font-size: 1rem;
-  color: $gray-davy;
+  color: var(--secondary-color); // Use theme secondary color for row text
   padding: 1rem 5px;
   cursor: pointer;
   font-weight: 600;
+
   &:hover {
-    color: $blue-persian;
+    color: var(--primary-color); // Use theme primary color on hover
     font-weight: 600;
   }
 }
+
 .lumina-autocomplete-clear-btn {
   cursor: pointer;
-  border: 2px solid $gray-light;
+  border: 2px solid var(--secondary-color); // Use theme secondary color for the button border
   width: 25px;
   height: 25px;
   border-radius: 50%;

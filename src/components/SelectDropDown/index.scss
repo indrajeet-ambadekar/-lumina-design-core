@@ -1,12 +1,14 @@
 @import "../../styles/global"; // Ensure this path is correct
+
 .lumina-dropdown {
   margin-top: 30px;
   width: auto;
   border-radius: 6px;
-  border: 1px solid $gray-light;
-  background-color: white;
+  border: 1px solid var(--border-color); // Theme border color
+  background-color: var(--background-color); // Theme background color
   position: relative;
 }
+
 .lumina-select-label {
   position: absolute;
   left: -2px;
@@ -14,17 +16,19 @@
   font-size: 11px;
   font-weight: 800;
   @include Montserrat;
-  color: $blue-persian;
-  background-color: $white;
+  color: var(--primary-color); // Theme primary color
+  background-color: var(--background-color); // Theme background color
   padding: 2px 9px;
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
 }
+
 .lumina-select-label-visible {
   opacity: 1;
   background-color: transparent;
   top: -25px;
 }
+
 .lumina-dropdown-header {
   height: 40px;
   padding: 5px 15px;
@@ -34,6 +38,7 @@
   align-items: center;
   @include Montserrat;
 }
+
 .lumina-dropdown-value {
   max-width: 80%;
   text-overflow: ellipsis;
@@ -46,14 +51,14 @@
   padding: 0px;
   @include Montserrat;
   font-weight: 500;
-  border: 1px solid $gray-light;
+  border: 1px solid var(--border-color); // Theme border color
   border-radius: 6px;
   display: none;
   position: absolute;
   left: 0;
   top: 50px;
   width: 100%;
-  background-color: $white;
+  background-color: var(--background-color); // Theme background color
   z-index: 50;
 }
 
@@ -68,28 +73,27 @@
   padding: 0 10px;
   display: flex;
   flex-direction: row;
-  // flex-wrap: wrap;
   width: 100%;
   align-items: center;
   justify-content: flex-start;
   min-height: 40px;
 }
+
 .lumina-dropdown-item-selected {
-  color: $white;
-  background-color: $blue-persian;
+  color: var(--button-text-color); // Theme button text color
+  background-color: var(--primary-color); // Theme primary color
   font-weight: 500;
 }
 
 .lumina-dropdown-item:hover {
   cursor: pointer;
-  // color: $white;
-  background-color: $gray-isabelline;
+  background-color: var(--secondary-color); // Theme secondary color
   font-weight: 500;
 }
 
 .lumina-dropdown-item-dot {
   opacity: 0;
-  color: #91a5be;
+  color: var(--focus-border-color); // Theme focus border color
   transition: all 0.2s ease-in-out;
   margin-right: 5px;
   font-size: 20px;
@@ -101,9 +105,10 @@
 
 .lumina-dropdown-icon {
   font-size: 13px;
-  color: #91a5be;
+  color: var(--focus-border-color); // Theme focus border color
   transform: rotate(0deg);
   transition: all 0.2s ease-in-out;
+
   svg {
     width: 18px;
     height: 18px;
@@ -113,6 +118,7 @@
 .lumina-dropdown-icon-open {
   transform: rotate(180deg);
 }
+
 .lumina-dropdown-focused {
-  border: 1px solid $blue-persian;
+  border: 1px solid var(--primary-color); // Theme primary color
 }

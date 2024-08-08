@@ -8,8 +8,9 @@
   justify-content: space-between;
   box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
   padding: 0px 1rem;
-  background-color: $white;
+  background-color: var(--background-color); // Use theme background color
 }
+
 .lumina-header-app-logo {
   height: 50px;
   @include vertical-center-left;
@@ -17,11 +18,13 @@
   overflow: hidden;
   box-sizing: border-box;
 }
+
 .lumina-header-app-logo-img {
   height: 30px;
   margin-right: 10px;
   max-width: 100px;
 }
+
 .lumina-header-app-logo-wrapper {
   display: flex;
   flex-direction: row;
@@ -29,9 +32,11 @@
   justify-content: flex-start;
   height: 60px;
 }
+
 .lumina-header-app-logo-wrapper img {
   height: 30px;
 }
+
 .lumina-header-profile-wrapper {
   width: 20%;
   height: 50px;
@@ -39,10 +44,100 @@
   overflow: hidden;
   box-sizing: border-box;
 }
+
 .lumina-header-nav-cntnr {
   width: 60%;
   height: 50px;
   @include vertical-center;
   overflow: hidden;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .lumina-header-wrapper {
+    padding: 5px 10px;
+    height: 40px;
+    position: relative;
+    box-shadow:
+      0px 0px 2px rgba(40, 41, 61, 0.04),
+      0px 4px 8px rgba(96, 97, 112, 0.1);
+  }
+
+  .lumina-header-nav-cntnr {
+    height: 40px;
+    display: none;
+  }
+
+  .lumina-header-app-logo {
+    @include vertical-center-left;
+    height: 40px;
+    width: 80%;
+    max-width: 80%;
+
+    img {
+      max-height: 20px;
+      margin: 0 10px;
+    }
+  }
+
+  .lumina-header-profile-wrapper {
+    height: 40px;
+    width: 20%;
+    max-width: 20%;
+  }
+
+  .lumina-header-app-logo-img {
+    height: 20px;
+  }
+
+  .lumina-header-hamburger-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 30px;
+    background-color: transparent;
+    height: 40px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+
+    i {
+      color: var(--primary-color); // Use theme primary color for the icon
+      transition: all 1s ease-in 0s;
+    }
+  }
+
+  .lumina-header-hamburger-menu {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    right: 0;
+    left: 0;
+    background-color: var(--background-color); // Use theme background color
+    box-shadow:
+      0px 0px 2px rgba(40, 41, 61, 0.04),
+      0px 4px 8px rgba(96, 97, 112, 0.1);
+    border: 1px solid var(--secondary-color); // Use theme secondary color for the border
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 5;
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    * {
+      transform: scale(0.8);
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .lumina-header-hamburger-btn {
+    display: none;
+  }
 }

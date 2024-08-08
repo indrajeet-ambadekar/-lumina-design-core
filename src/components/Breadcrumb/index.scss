@@ -9,10 +9,12 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .lumina-breadcrumb-crumb {
   margin: 0 10px 0 0px;
   @include vertical-center-left;
 }
+
 .lumina-breadcrumb-label {
   cursor: pointer;
   @include vertical-center-left;
@@ -25,18 +27,22 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.32px;
-    color: $lumina-orange;
+    color: var(--primary-color); // Use theme primary color for breadcrumb label
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
 }
+
 .lumina-breadcrumb-chevron {
   margin-left: 10px;
   padding-top: 2px;
+
   svg {
     path {
-      stroke: $blue-persian;
+      stroke: var(
+        --secondary-color
+      ); // Use theme secondary color for chevron icon
     }
   }
 }

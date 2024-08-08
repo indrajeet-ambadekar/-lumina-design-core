@@ -10,6 +10,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   text-align: left;
+
   &-checkbox {
     display: none;
   }
@@ -30,6 +31,7 @@
       margin: 2px;
     }
   }
+
   @media screen and (max-width: 991px) {
     transform: scale(0.9);
   }
@@ -40,23 +42,27 @@
     transform: scale(0.75);
   }
 }
+
 .toggle-switch-label {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid $gray-isabelline;
-  border-radius: 6px;
+  border: 2px solid var(--border-color); // Use theme border color
+  border-radius: 8px;
   margin: 0;
+
   &:focus {
     outline: none;
     > span {
-      box-shadow: 0 0 2px 5px red;
+      box-shadow: 0 0 2px 5px var(--focus-color); // Use theme focus color
     }
   }
+
   > span:focus {
     outline: none;
   }
 }
+
 .toggle-switch-checkbox:checked + .toggle-switch-label {
   .toggle-switch-inner {
     margin-left: 0;
@@ -65,18 +71,20 @@
     right: 0px;
   }
 }
+
 .toggle-switcher {
   display: block;
   width: 40px;
   margin: 5px;
-  background: $lumina-orange;
+  background: var(--primary-color); // Use theme primary color
   position: absolute;
   top: 2px;
   bottom: 2px;
   right: 45px;
-  border: 0 solid $gray-isabelline;
+  border: 0 solid var(--border-color); // Use theme border color
   border-radius: 6px;
   transition: all 0.3s ease-in 0s;
+
   &:after {
     left: 0;
   }
@@ -87,6 +95,7 @@
   width: 200%;
   margin-left: -100%;
   transition: margin 0.3s ease-in 0s;
+
   &:before,
   &:after {
     display: block;
@@ -96,32 +105,36 @@
     padding: 0;
     line-height: 34px;
     font-size: 14px;
-    color: white;
+    color: var(--text-color); // Use theme text color
     font-weight: bold;
     box-sizing: border-box;
   }
+
   &:before {
     content: attr(data-yes);
     text-transform: uppercase;
     padding-left: 10px;
-    background-color: $white;
-    color: $lumina-orange;
+    background-color: var(--background-color); // Use theme background color
+    color: var(--primary-color); // Use theme primary color
     font-weight: 800;
   }
 }
+
 .toggle-switch-disabled {
-  background-color: $gray-davy;
+  background-color: var(--disabled-bg); // Use theme disabled background color
   cursor: not-allowed;
+
   &:before {
-    background-color: $gray-davy;
+    background-color: var(--disabled-bg); // Use theme disabled background color
     cursor: not-allowed;
   }
 }
+
 .toggle-switch-inner:after {
   content: attr(data-no);
   text-transform: uppercase;
   padding-right: 10px;
-  background-color: $white;
-  color: $lumina-orange;
+  background-color: var(--background-color); // Use theme background color
+  color: var(--primary-color); // Use theme primary color
   text-align: right;
 }

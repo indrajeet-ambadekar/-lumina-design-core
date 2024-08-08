@@ -6,7 +6,7 @@
   left: 25%;
   width: 50%;
   z-index: 50;
-  background-color: #fff;
+  background-color: var(--background-color); // Use theme background color
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px 10px 0px 0px;
   height: 60px;
@@ -15,12 +15,13 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
 .lumina-nav-item {
   cursor: pointer;
   height: 60px;
   @include vertical-center();
   flex-direction: column;
-  color: $gray-old-silver;
+  color: var(--secondary-color); // Use theme secondary color for text
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -30,28 +31,37 @@
   flex-grow: 1;
   border-bottom: 3px solid transparent;
 }
+
 .lumina-nav-item-active {
-  border-bottom-color: $lumina-orange;
+  border-bottom-color: var(
+    --primary-color
+  ); // Use theme primary color for active state
   font-weight: 800;
+
   i,
   span {
-    color: $lumina-orange;
+    color: var(--primary-color); // Use theme primary color for icon and text
   }
 }
+
 .lumina-nav-item-icon {
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
+
   * {
-    color: $gray-old-silver;
+    color: var(--secondary-color); // Use theme secondary color for icon
   }
 }
+
 .lumina-nav-center-item {
   cursor: pointer;
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: $lumina-orange;
+  background-color: var(
+    --primary-color
+  ); // Use theme primary color for center item
   border: 4px solid transparent;
   @include vertical-center();
   text-align: center;
@@ -63,7 +73,36 @@
   * {
     text-align: center !important;
   }
+
   i {
-    color: #fff;
+    color: var(--background-color); // Use theme background color for the icon
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lumina-bottom-navigation {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    height: 40px;
+    bottom: 0;
+
+    * {
+      transform: scale(0.85);
+    }
+  }
+
+  .lumina-nav-center-item {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+  }
+
+  .lumina-nav-item {
+    height: 45px;
+  }
+
+  .lumina-nav-item-icon {
+    margin: 2px;
   }
 }

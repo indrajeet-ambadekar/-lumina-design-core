@@ -4,11 +4,12 @@
   display: block;
   padding: 1rem 1.3rem;
 }
+
 .lumina-range-slider {
   display: block;
   width: 100%;
   -webkit-appearance: none;
-  -moz-apperance: none;
+  -moz-appearance: none;
   border-radius: 6px;
   margin: 10px 0;
   height: 8px;
@@ -16,16 +17,16 @@
     linear,
     left top,
     right top,
-    color-stop(0.2, $red-carnelian),
-    color-stop(0.2, $gray-light)
+    color-stop(0.2, var(--primary-color)),
+    color-stop(0.2, var(--secondary-color))
   );
   transition: all 0.3s ease-in 0s;
 }
 
 .lumina-range-slider::-webkit-slider-thumb {
   -webkit-appearance: none !important;
-  background-color: $lumina-orange;
-  border: 1px solid $red-carnelian;
+  background-color: var(--primary-color); // Theme primary color
+  border: 1px solid var(--secondary-color); // Theme secondary color
   height: 24px;
   width: 24px;
   border-radius: 50%;
@@ -35,13 +36,15 @@
     border-width: 4px;
   }
 }
+
 .lumina-slider-label-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .lumina-slider-label {
-  color: $gray-davy;
+  color: var(--text-color); // Theme text color
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -51,6 +54,7 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 50%;
+
   b {
     font-weight: 700;
     font-size: 16px;

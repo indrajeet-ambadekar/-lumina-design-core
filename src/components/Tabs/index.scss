@@ -3,27 +3,31 @@
 .lumina-tab-wrapper {
   padding: 5px;
 }
+
 .lumina-tab-cntnr {
   box-sizing: border-box;
 }
+
 .lumina-tab-header {
-  border-bottom: 1px solid $gray-isabelline;
+  border-bottom: 1px solid var(--border-color); // Theme border color
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+
   & > div {
     width: fit-content;
     padding: 9px 20px 6px 20px;
     display: block;
-    // max-width: 100px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
 }
+
 .lumina-tab-header-contained {
   border-bottom: none;
 }
+
 .lumina-tab-chip {
   @include Montserrat;
   font-style: normal;
@@ -31,10 +35,11 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.26px;
-  color: $gray-old-silver;
+  color: var(--text-color); // Theme text color
   border-bottom: 3px solid transparent;
   cursor: pointer;
 }
+
 .lumina-tab-chip-contained {
   @include Montserrat;
   font-style: normal;
@@ -42,36 +47,41 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.26px;
-  color: $gray-old-silver;
+  color: var(--text-color); // Theme text color
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 6px;
   margin-right: 10px;
-  background-color: $gray-isabelline;
+  background-color: var(--secondary-color); // Theme secondary color
 }
+
 .lumina-active-tab-chip {
-  border-bottom: 3px solid $lumina-orange;
+  border-bottom: 3px solid var(--primary-color); // Theme primary color
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
   font-weight: 700;
+
   * {
-    color: $lumina-orange;
+    color: var(--primary-color); // Theme primary color
   }
 }
+
 .lumina-active-contained-tab-chip {
-  border: 1px solid $lumina-orange;
+  border: 1px solid var(--primary-color); // Theme primary color
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
   font-weight: 700;
-  background-color: #fff;
+  background-color: var(--background-color); // Theme background color
+
   * {
-    color: $lumina-orange;
+    color: var(--primary-color); // Theme primary color
   }
 }
+
 .lumina-tab {
   @include Montserrat;
   font-style: normal;
@@ -79,6 +89,6 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.26px;
-  color: $gray-old-silver;
+  color: var(--text-color); // Theme text color
   padding: 20px 5px;
 }

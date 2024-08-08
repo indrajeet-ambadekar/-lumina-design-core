@@ -3,25 +3,41 @@
 .lumina-flbtn {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08);
   border-radius: 28px;
-  padding: 13px 16px 13px 16px;
+  padding: 13px 16px;
   width: fit-content;
   text-align: center;
   @include vertical-center;
   flex-direction: row;
   margin: 15px;
   cursor: pointer;
+  background-color: var(
+    --button-primary-bg,
+    $lumina-orange
+  ); // Use theme variable for background
+  color: var(--button-text-color, $white); // Use theme variable for text color
 }
+
 .lumina-flbtn-label {
   margin: 0 10px;
   font-size: 14px;
+  color: inherit; // Inherit color from parent
 }
+
 .lumina-flbtn-icon {
   font-size: 14px;
+  color: inherit; // Inherit color from parent
 }
+
 .lumina-flbtn-orange {
-  background-color: $lumina-orange;
+  background-color: var(
+    --button-primary-bg,
+    $lumina-orange
+  ); // Use theme variable for background
   * {
-    color: $white;
+    color: var(
+      --button-text-color,
+      $white
+    ); // Use theme variable for text color
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
@@ -30,15 +46,25 @@
   }
   svg {
     path {
-      stroke: $white;
+      stroke: var(
+        --button-text-color,
+        $white
+      ); // Use theme variable for stroke color
     }
   }
 }
+
 .lumina-flbtn-white {
-  background-color: $white;
-  border: 1px solid $gray-isabelline;
+  background-color: var(
+    --background-color,
+    $white
+  ); // Use theme variable for background
+  border: 1px solid var(--border-color, $gray-isabelline); // Use theme variable for border color
   * {
-    color: $black-raisin;
+    color: var(
+      --text-color,
+      $black-raisin
+    ); // Use theme variable for text color
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
@@ -46,12 +72,14 @@
     line-height: 18px;
   }
 }
+
 .lumina-flbtn-S {
   padding: 5px 9px;
   * {
     font-size: 11px;
   }
 }
+
 .lumina-flbtn-M {
   padding: 12px 16px;
   * {

@@ -35,6 +35,8 @@ import Text from "./components/Text";
 import ToggleInput from "./components/ToggleInput";
 import ToggleSwitch from "./components/ToggleSwitch";
 import Tooltip from "./components/Tooltip";
+import { ThemeProvider, useTheme } from "./components/ThemeProvider/Theme";
+import ThemeSwitch from "./components/ThemeSwitch";
 
 export default {
   InputField,
@@ -71,5 +73,8 @@ export default {
   Text,
   ToggleInput,
   ToggleSwitch,
-  Tooltip
+  Tooltip,
+  ThemeProvider,
+  ThemeSwitch,
+  useTheme
 };

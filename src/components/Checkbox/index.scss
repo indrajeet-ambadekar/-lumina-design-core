@@ -1,7 +1,6 @@
 @import "../../styles/global"; // Ensure this path is correct
 
 .lumina-checkbox {
-  // margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,10 +8,11 @@
   min-height: 14px;
   max-height: 26px;
 }
+
 .lumina-checkbox-disabled {
   cursor: not-allowed;
   .lumina-checkbox-label {
-    color: $gray-light;
+    color: var(--text-color, $gray-light);
   }
 }
 
@@ -21,9 +21,10 @@
   aspect-ratio: 1 / 1;
   width: 20px;
   height: 20px;
+
   label {
     background-color: transparent;
-    border: 2px solid #ccc;
+    border: 2px solid var(--secondary-color, #ccc);
     border-radius: 6px;
     cursor: pointer;
     width: 20px; /* Width */
@@ -34,7 +35,7 @@
     aspect-ratio: 1 / 1;
 
     &:after {
-      border: 2px solid #fff;
+      border: 2px solid var(--background-color, #fff);
       border-top: none;
       border-right: none;
       content: "";
@@ -53,29 +54,31 @@
   }
 
   input[type="checkbox"]:checked + label {
-    background-color: $lumina-orange;
-    border-color: $lumina-orange;
+    background-color: var(--button-primary-bg, $lumina-orange);
+    border-color: var(--button-primary-bg, $lumina-orange);
   }
 
   input[type="checkbox"]:checked + label:after {
     opacity: 1;
   }
 }
+
 .checkbox-round-disabled {
   label {
-    border: 2px solid rgb(237, 237, 237);
+    border: 2px solid var(--button-disabled-bg, rgb(237, 237, 237));
     cursor: not-allowed;
     &:after {
       opacity: 0.3;
     }
   }
 }
+
 .lumina-checkbox-label {
   margin: 0 12px;
   font-weight: 400;
   font-size: 1rem;
   height: 100%;
   @include vertical-center-left;
-  color: $black-raisin;
+  color: var(--text-color, $black-raisin);
   @include Montserrat;
 }

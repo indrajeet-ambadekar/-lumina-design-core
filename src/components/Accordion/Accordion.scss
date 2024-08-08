@@ -4,25 +4,29 @@
   margin: 1rem 0;
   @include card-shadow;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: var(--background-color); // Use theme background color
 }
+
 ._acrdn-item {
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
   height: auto;
   max-height: 9999px;
 }
+
 ._acrdn-expanded {
   font-size: inherit;
 }
+
 ._acrdn-collapsed {
   max-height: 0;
   transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
 }
+
 ._acrdn-title-custom {
   font-weight: 500;
   cursor: pointer;
-  color: $black-raisin;
+  color: var(--text-color); // Use theme text color
   padding: 10px 1rem;
   display: flex;
   justify-content: space-between;
@@ -36,6 +40,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--text-color); // Use theme text color
 
   &::after {
     content: "";
@@ -43,34 +48,39 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid currentColor;
+    border-top: 5px solid currentColor; // Use current text color
   }
 
   &:hover,
   &.open {
-    color: black;
+    color: var(--primary-color); // Use theme primary color for open state
   }
 
   &.open {
     &::after {
       content: "";
       border-top: 0;
-      border-bottom: 5px solid;
+      border-bottom: 5px solid currentColor; // Use current text color for arrow
     }
   }
 }
+
 ._acrdn-open {
   font-size: inherit;
   * {
-    color: $lumina-orange;
+    color: var(--primary-color); // Use theme primary color
   }
 }
+
 ._acrdn-closed {
   font-size: inherit;
 }
+
 ._acrdn-content {
   padding: 1em;
+  color: var(--text-color); // Use theme text color for content
 }
+
 .accordion_collapse-controls {
   font-size: 18px;
   * {

@@ -12,27 +12,39 @@
   position: relative;
   overflow: hidden;
   background-position: center;
-  transition: background 0.8s;
-  font-size: 15px;
-  background: #fff radial-gradient(circle, transparent 1%, $button-seconday 1%)
+  background: var(--button-secondary-bg, $button-seconday)
+    radial-gradient(
+      circle,
+      transparent 1%,
+      var(--button-secondary-bg, $button-seconday) 1%
+    )
     center/15000%;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   &[alignicon="left"] {
     flex-direction: row-reverse;
   }
   &[alignicon="right"] {
     flex-direction: row;
   }
+
   &:active {
     background-size: 100%;
     transition: background 0s;
   }
   &:disabled {
     cursor: not-allowed;
-    background-color: $gray-light !important;
+    background-color: var(--button-disabled-bg, $gray-light) !important;
+    background: var(--button-disabled-bg, $gray-light)
+      radial-gradient(
+        circle,
+        transparent 1%,
+        var(--button-disabled-bg, $gray-light) 1%
+      )
+      center/15000%;
   }
 
   &[curve="rounded"] {
@@ -44,21 +56,24 @@
   &[curve="flat"] {
     border-radius: 0px !important;
   }
+
   &[type="primary"] {
-    color: $white;
-    background-color: $lumina-orange;
+    color: var(--button-text-color, $white);
+    background-color: var(--button-primary-bg, $lumina-orange);
     position: relative;
     overflow: hidden;
     background-position: center;
     transition: background 0.8s;
-    background: $lumina-orange
-      radial-gradient(circle, transparent 1%, #b11116 1%) center/15000%;
+    background: var(--button-primary-bg, $lumina-orange)
+      radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.2) 1%)
+      center/15000%;
+
     * {
-      color: $white;
+      color: var(--button-text-color, $white);
     }
     svg {
       path {
-        stroke: $white;
+        stroke: var(--button-text-color, $white);
       }
     }
 
@@ -68,42 +83,58 @@
     }
     &:disabled {
       cursor: not-allowed;
-      background: $gray-light
-        radial-gradient(circle, transparent 1%, $gray-light 1%) center/15000%;
+      background: var(--button-disabled-bg, $gray-light)
+        radial-gradient(
+          circle,
+          transparent 1%,
+          var(--button-disabled-bg, $gray-light) 1%
+        )
+        center/15000%;
     }
   }
-  &[type="secondary"] {
-    color: $lumina-orange;
 
-    background-color: $button-seconday;
+  &[type="secondary"] {
+    color: var(--primary-color, $lumina-orange);
+    background-color: var(--button-secondary-bg, $button-seconday);
     position: relative;
     overflow: hidden;
     background-position: center;
     transition: background 0.8s;
-    border: 1px solid #e2e2e2;
+    border: 1px solid var(--primary-color, #e2e2e2);
     border-radius: 6px;
-    background: $button-seconday
-      radial-gradient(circle, transparent 1%, #ed1c244d 1%) center/15000%;
+    background: var(--button-secondary-bg, $button-seconday)
+      radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.2) 1%)
+      center/15000%;
+
     &:active {
       background-size: 100%;
       transition: background 0s;
     }
     &:disabled {
       cursor: not-allowed;
-      background: $gray-light
-        radial-gradient(circle, transparent 1%, $gray-light 1%) center/15000%;
+      background: var(--button-disabled-bg, $gray-light)
+        radial-gradient(
+          circle,
+          transparent 1%,
+          var(--button-disabled-bg, $gray-light) 1%
+        )
+        center/15000%;
     }
+
     * {
-      color: $lumina-orange;
+      color: var(--primary-color, $lumina-orange);
     }
   }
+
   &[type="text"] {
-    color: $lumina-orange;
+    color: var(--primary-color, $lumina-orange);
     font-weight: 600;
+
     * {
-      color: $lumina-orange;
+      color: var(--primary-color, $lumina-orange);
     }
   }
+
   &[buttonSize="S"],
   &[size="S"] {
     padding: 0.3rem 1rem;
@@ -120,8 +151,10 @@
     font-size: 18px;
   }
 }
+
 .lumina-button-icon {
   margin: 0 5px;
+
   * {
     color: inherit;
     font-size: inherit;

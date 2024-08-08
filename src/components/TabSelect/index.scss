@@ -1,23 +1,28 @@
 @import "../../styles/global"; // Ensure this path is correct
+
 .lumina-tab-select-wrapper {
   padding: 1rem 0;
   @include vertical-center-left();
   flex-direction: column;
 }
+
 .lumina-tab-select-label {
   @include Montserrat;
   font-weight: 600;
   font-size: 1rem;
   line-height: 35px;
+  color: var(--text-color); // Theme text color
 }
+
 .lumina-tab-select-option-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: fit-content;
 }
+
 .lumina-tab-select-option {
-  border: none; //1px solid $black-raisin;
+  border: none; // Removed hardcoded border
   @include card-shadow();
   border-radius: 6px;
   padding: 0.5rem 1rem;
@@ -26,16 +31,17 @@
   font-size: 14px;
   @include Montserrat();
   cursor: pointer;
-  background-color: transparent; //$gray-isabelline;
+  background-color: var(--primary-color); // Theme primary color
+  color: var(--button-text-color); // Theme button text color
   font-weight: 700;
-  color: $black-raisin;
 }
+
 .lumina-tab-select-option-selected {
-  background-color: $lumina-orange;
-  color: $white;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   svg {
     path {
-      stroke: #fff;
+      stroke: var(--button-text-color); // Theme button text color
     }
   }
 }
