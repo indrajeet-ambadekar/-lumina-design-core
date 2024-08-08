@@ -12,7 +12,7 @@
     "watch": "webpack --watch",
     "add_package_json": "cp -a ./config/* ./dist/ && cp -a README.md dist/.",
     "publish_package": "rm -rf dist && yarn build && yarn add_package_json && cd dist && npm publish --access public && cd ../",
-    "pretty": "onchange 'src/**/*.**' './*.js' './package.json' 'README.md' -- prettier --write {{changed}}"
+    "pretty": "onchange 'src/**/*.**' 'playground/src/**/*.**' './*.js' './package.json' 'README.md' -- prettier --write {{changed}}"
   },
   "keywords": [],
   "author": "",

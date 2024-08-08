@@ -29,13 +29,13 @@ $button-seconday: #f9f9f9;
 }
 @mixin vertical-center-left {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 }
 @mixin vertical-center-right {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
 }
 body {
   &::-webkit-scrollbar {

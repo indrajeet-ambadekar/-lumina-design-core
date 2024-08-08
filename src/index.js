@@ -13,6 +13,7 @@ import {
 } from "./components/BottomNavigation/BottomNavigation";
 import Breadcrumb from "./components/Breadcrumb";
 import Button from "./components/Button";
+import Carousel from "./components/Carousel";
 import Checkbox from "./components/Checkbox";
 import Chip from "./components/Chip";
 import Column from "./components/Column";
@@ -47,6 +48,7 @@ export default {
   BottomNavItem,
   Breadcrumb,
   Button,
+  Carousel,
   Checkbox,
   Chip,
   Column,
