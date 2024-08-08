@@ -1,5 +1,3 @@
-// src/Carousel.js
-
 import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.scss";
 import ChevronLeftIcon from "../../assets/icons/ChevronLeft.js";
@@ -15,6 +13,8 @@ const Carousel = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(loop ? 1 : 0); // Start from the first slide if loop is false
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const slideRef = useRef(null);
 
   const totalSlides = React.Children.count(children);
@@ -23,12 +23,10 @@ const Carousel = ({
     setIsTransitioning(false);
     if (loop) {
       if (currentIndex === 0) {
-        // If we are on the fake first slide, reset to the last real slide
         setCurrentIndex(totalSlides);
         slideRef.current.style.transition = "none";
         slideRef.current.style.transform = `translateX(-${totalSlides * 100}%)`;
       } else if (currentIndex === totalSlides + 1) {
-        // If we are on the fake last slide, reset to the first real slide
         setCurrentIndex(1);
         slideRef.current.style.transition = "none";
         slideRef.current.style.transform = `translateX(-100%)`;
@@ -62,6 +60,54 @@ const Carousel = ({
     }
   };
 
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (isDragging) {
+      const currentX = e.touches[0].clientX;
+      const distance = startX - currentX;
+      if (Math.abs(distance) > 50) {
+        if (distance > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        setIsDragging(false);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseDown = (e) => {
+    setStartX(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (isDragging) {
+      const currentX = e.clientX;
+      const distance = startX - currentX;
+      if (Math.abs(distance) > 50) {
+        if (distance > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        setIsDragging(false);
+      }
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
     if (isTransitioning) {
       slideRef.current.style.transition = "transform 0.5s ease-in-out";
@@ -80,16 +126,25 @@ const Carousel = ({
 
   useEffect(() => {
     let interval;
-    if (slideShowInterval && slideShowInterval > 5000) {
+    if (slideShowInterval && slideShowInterval >= 5000) {
       interval = setInterval(() => {
         nextSlide();
       }, slideShowInterval);
     }
     return () => clearInterval(interval);
-  }, [slideShowInterval, currentIndex]);
+  }, [slideShowInterval]);
 
   return (
-    <div className={`carousel ${className}`} id={id}>
+    <div
+      className={`carousel ${className}`}
+      id={id}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <button
         onClick={prevSlide}
         className="carousel-button"
